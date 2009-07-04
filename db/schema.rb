@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090704051523) do
+ActiveRecord::Schema.define(:version => 20090704051709) do
 
   create_table "parsers", :force => true do |t|
     t.string   "display"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20090704051523) do
     t.text     "code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parser_id"
   end
 
 end
