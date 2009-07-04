@@ -1,7 +1,8 @@
 <p>
-  <b>Code:</b>
-  <%=h @paste.code %>
+  <b>Highlighted Code:</b>
+  <%= Uv.parse(@paste.code, 'xhtml', @paste.parser.name, true, 'twilight')%>
 </p>
+
 <br/>
 <p>
   <b>Language</b>
