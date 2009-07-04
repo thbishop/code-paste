@@ -2,13 +2,13 @@
 
 <table>
   <tr>
-    <th>Display</th>
+    <th>Display Name</th>
     <th>Name</th>
   </tr>
 
 <% @parsers.each do |parser| %>
   <tr>
-    <td><%=h parser.display %></td>
+    <td><%=h parser.display_name %></td>
     <td><%=h parser.name %></td>
     <td><%= link_to 'Show', parser %></td>
     <td><%= link_to 'Edit', edit_parser_path(parser) %></td>

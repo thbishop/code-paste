@@ -2,7 +2,11 @@
   <b>Code:</b>
   <%=h @paste.code %>
 </p>
-
+<br/>
+<p>
+  <b>Language</b>
+  <%=h @paste.parser.display_name %>
+</p>
 
 <%= link_to 'Edit', edit_paste_path(@paste) %> |
 <%= link_to 'Back', pastes_path %>

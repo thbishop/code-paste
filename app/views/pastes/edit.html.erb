@@ -8,7 +8,10 @@
     <%= f.text_area :code %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+	<%= f.collection_select(:parser_id, Parser.all, :id, :display_name, { :include_blank => false }) %>
+  </p>
+  <p>
+    <%= f.submit 'Paste' %>
   </p>
 <% end %>
 

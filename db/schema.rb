@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20090704051709) do
 
   create_table "parsers", :force => true do |t|
-    t.string   "display"
+    t.string   "display_name"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
