@@ -1,0 +1,20 @@
+<h1>Editing parser</h1>
+
+<% form_for(@parser) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :display %><br />
+    <%= f.text_field :display %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @parser %> |
+<%= link_to 'Back', parsers_path %>
