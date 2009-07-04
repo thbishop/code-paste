@@ -2,7 +2,6 @@ class CreatePastes < ActiveRecord::Migration
   def self.up
     create_table :pastes do |t|
       t.text :code
-      t.string :lang
 
       t.timestamps
     end

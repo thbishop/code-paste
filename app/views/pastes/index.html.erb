@@ -3,13 +3,11 @@
 <table>
   <tr>
     <th>Code</th>
-    <th>Lang</th>
   </tr>
 
 <% @pastes.each do |paste| %>
   <tr>
     <td><%=h paste.code %></td>
-    <td><%=h paste.lang %></td>
     <td><%= link_to 'Show', paste %></td>
     <td><%= link_to 'Edit', edit_paste_path(paste) %></td>
     <td><%= link_to 'Destroy', paste, :confirm => 'Are you sure?', :method => :delete %></td>

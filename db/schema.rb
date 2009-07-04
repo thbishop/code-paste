@@ -13,7 +13,6 @@ ActiveRecord::Schema.define(:version => 20090703062243) do
 
   create_table "pastes", :force => true do |t|
     t.text     "code"
-    t.string   "lang"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
