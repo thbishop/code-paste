@@ -3,19 +3,6 @@
 <br/>
 <p>
   <b>Highlighted Code:</b>
-  <% parsed_output = Uv.parse(@paste.code, 'xhtml', @paste.parser.name, true, 'twilight')%>
-  <% doc = Nokogiri::HTML(parsed_output)%>
-  <% lin_num = "" %>
-  <% code = "" %>
-<% doc.xpath('//pre').each do |root| %>
-  <% root.children.each do |n| %>
-	  <% if n['class'] == 'line-numbers'%>
-		  <% lin_num += n.content + "\n" %>
-	  <% else %>
-	    <% code += n.to_s%>
-	  <% end %>
-  <% end %>
-<% end %>
 </p>
 
 <br/>
@@ -23,10 +10,10 @@
   <table>
 	<tr>
 		<td>
-			DATA CELL 1 <pre><%= lin_num %></pre>
+			DATA CELL 1 <pre><%= @paste.line_numbers %></pre>
 		</td>
 		<td>
-			DATA CELL 2 <pre><%= code %></pre>
+			DATA CELL 2 <pre><%= @paste.highlighted_code %></pre>
 		</td>
 	</tr>
   </table>
