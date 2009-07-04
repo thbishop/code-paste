@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "thoughtbot-shoulda", :version => '2.10.1', :lib => 'shoulda', :source => "http://gems.github.com"
   config.gem 'ultraviolet', :version => '0.10.2', :lib => 'Uv'
+  config.gem 'nokogiri', :version => '1.3.2'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

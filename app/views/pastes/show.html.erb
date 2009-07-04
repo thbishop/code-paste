@@ -1,9 +1,35 @@
+<%= Uv.parse(@paste.code, 'xhtml', @paste.parser.name, true, 'twilight')%>
+<br/>
+<br/>
 <p>
   <b>Highlighted Code:</b>
-  <%= Uv.parse(@paste.code, 'xhtml', @paste.parser.name, true, 'twilight')%>
+  <% parsed_output = Uv.parse(@paste.code, 'xhtml', @paste.parser.name, true, 'twilight')%>
+  <% doc = Nokogiri::HTML(parsed_output)%>
+  <% lin_num = "" %>
+  <% code = "" %>
+<% doc.xpath('//pre').each do |root| %>
+  <% root.children.each do |n| %>
+	  <% if n['class'] == 'line-numbers'%>
+		  <% lin_num += n.content + "\n" %>
+	  <% else %>
+	    <% code += n.to_s%>
+	  <% end %>
+  <% end %>
+<% end %>
 </p>
 
 <br/>
+<br/>
+  <table>
+	<tr>
+		<td>
+			DATA CELL 1 <pre><%= lin_num %></pre>
+		</td>
+		<td>
+			DATA CELL 2 <pre><%= code %></pre>
+		</td>
+	</tr>
+  </table>
 <p>
   <b>Language</b>
   <%=h @paste.parser.display_name %>
