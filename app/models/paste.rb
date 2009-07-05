@@ -5,7 +5,6 @@ class Paste < ActiveRecord::Base
     parsed_output = Uv.parse(self.code, 'xhtml', self.parser.name, true, 'twilight')
     doc = Nokogiri::HTML(parsed_output)
     
-    # lin_num = "<pre id=\"source-numbers\" class=\"twilight\"><span class=\"Comment\">"
     lin_num = ''
     
     doc.xpath('//pre').each do |root|
@@ -15,8 +14,6 @@ class Paste < ActiveRecord::Base
         end
       end
     end
-    
-    # lin_num += "</span></pre>"
     
     return lin_num    		  
   end

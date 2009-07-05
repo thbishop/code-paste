@@ -1,19 +1,33 @@
-<div id='code' class='twilight'>
-  <table>
-	<tr>
-		<td>
-			<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
-		</td>
-		<td>
-			<%= @paste.highlighted_code %>
-		</td>
-	</tr>
-  </table>
+<div id="content">
+	<div id='code' class='twilight'>
+		<div id="code-head">
+			<div id="code-theme">
+				<span class="Comment">
+					THEME
+				</span>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	  <table>
+		<tr>
+			<td>
+				<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
+			</td>
+			<td>
+				<%= @paste.highlighted_code %>
+			</td>
+		</tr>
+	  </table>
+	</div>
 </div>
-<p>
-  <b>Language</b>
-  <%=h @paste.parser.display_name %>
-</p>
+<div id="right">
+	Pasted<br/>
+	as<span class='stat'><%= " #{@paste.parser.display_name}"%></span><br/>
+	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span>at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
+	<br/><br/>
+	<%= link_to 'edit', edit_paste_path(@paste) %><span class='pipe_spacer'>|</span><%= link_to 'raw', edit_paste_path(@paste) %>
+	<br/>
+	
+</div>
+<div style="clear: both"></div>
 
-<%= link_to 'Edit', edit_paste_path(@paste) %> |
-<%= link_to 'Back', pastes_path %>
