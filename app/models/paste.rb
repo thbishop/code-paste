@@ -2,8 +2,7 @@ class Paste < ActiveRecord::Base
   belongs_to :parser
   
   def line_numbers
-    parsed_output = Uv.parse(self.code, 'xhtml', self.parser.name, true, 'twilight')
-    doc = Nokogiri::HTML(parsed_output)
+    doc = get_parsed_code
     
     lin_num = ''
     
@@ -19,8 +18,7 @@ class Paste < ActiveRecord::Base
   end
   
   def highlighted_code
-    parsed_output = Uv.parse(self.code, 'xhtml', self.parser.name, true, 'twilight')
-    doc = Nokogiri::HTML(parsed_output)
+    doc = get_parsed_code
     
     hcode = ""
     
@@ -37,6 +35,12 @@ class Paste < ActiveRecord::Base
     end
     
     return doc
+  end
+  
+  private
+  def get_parsed_code
+    parsed_output = Uv.parse(self.code, 'xhtml', self.parser.name, true, 'twilight')
+    doc = Nokogiri::HTML(parsed_output)    
   end
   
 end
