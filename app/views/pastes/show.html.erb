@@ -1,22 +1,15 @@
-<%= Uv.parse(@paste.code, 'xhtml', @paste.parser.name, true, 'twilight')%>
-<br/>
-<br/>
-<p>
-  <b>Highlighted Code:</b>
-</p>
-
-<br/>
-<br/>
+<div id='code' class='twilight'>
   <table>
 	<tr>
 		<td>
-			DATA CELL 1 <pre><%= @paste.line_numbers %></pre>
+			<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
 		</td>
 		<td>
-			DATA CELL 2 <pre><%= @paste.highlighted_code %></pre>
+			<%= @paste.highlighted_code %>
 		</td>
 	</tr>
   </table>
+</div>
 <p>
   <b>Language</b>
   <%=h @paste.parser.display_name %>
