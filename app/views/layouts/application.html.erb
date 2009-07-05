@@ -31,9 +31,11 @@
 </head>
 <body>
 	<div id="header">
-		<p style="color: green"><%= flash[:notice] %></p>
 		<%= link_to 'All Pastes', pastes_path %>
 	</div>		
+	<div id="notice">
+		<span style="color: green"><%= flash[:notice] %></span>
+	</div>
 	<div id="container">
 			<%= yield %>
 	</div>

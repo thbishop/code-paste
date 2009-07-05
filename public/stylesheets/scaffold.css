@@ -75,6 +75,12 @@ a:hover {
 	border: #000000 1px solid;
 }
 
+#notice {
+	width: 400px;
+	height: 20px;
+	margin: 10px auto;
+}
+
 #container {
 	width: 1300px;
 	margin: 10px auto 0px auto;
