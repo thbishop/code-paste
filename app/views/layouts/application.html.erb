@@ -31,7 +31,15 @@
 </head>
 <body>
 	<div id="header">
-		<%= link_to 'All Pastes', pastes_path %>
+		<div id="header-nav">
+			<%= link_to 'New', new_paste_path %>
+			<span class='pipe_spacer'></span>
+			<span class='pipe_spacer'></span>
+			<span class='pipe_spacer'></span>
+			<span class='pipe_spacer'></span>
+			<span class='pipe_spacer'></span>
+			<%= link_to 'All Pastes', pastes_path %>
+		</div>
 	</div>		
 	<div id="notice">
 		<span style="color: green"><%= flash[:notice] %></span>

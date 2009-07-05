@@ -25,7 +25,7 @@
 	as<span class='stat'><%= " #{@paste.parser.display_name}"%></span><br/>
 	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span>at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
 	<br/><br/>
-	<%= link_to 'edit', edit_paste_path(@paste) %><span class='pipe_spacer'>|</span><%= link_to 'raw', edit_paste_path(@paste) %>
+	<%= link_to 'edit', edit_paste_path(@paste) %><span class='pipe_spacer'>|</span><%= link_to 'raw', paste_path(@paste, :format => :txt) %>
 	<br/>
 	
 </div>

@@ -1,6 +1,10 @@
 body { 
 	background-color: #efefef;
 	color: #333; 
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	min-height: 100%;
 }
 
 body, p, ol, ul, td {
@@ -71,9 +75,33 @@ a:hover {
 
 
 #header {
-	height: 30px;
-	border: #000000 1px solid;
+	background: #999999 none repeat scroll 0 0;
+	border-bottom: #d7d7d7 4px solid;
+	padding: 5px 20px 5px;
 }
+
+#header-nav {
+	margin: 0px auto;
+	padding: 8px 50px;
+	
+}
+
+#header-nav a {
+	color: #d7d7d7;
+	background-color: #999999;
+	text-decoration: none;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#header-nav a:hover {
+	background-color: #999999;
+	color: #d7d7d7;
+	text-decoration: underline;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
 
 #notice {
 	width: 400px;
@@ -84,6 +112,7 @@ a:hover {
 #container {
 	width: 1300px;
 	margin: 10px auto 0px auto;
+	padding-bottom: 30px;
 }
 
 #content {
