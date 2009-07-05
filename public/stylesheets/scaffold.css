@@ -121,6 +121,7 @@ a:hover {
 
 #code {
 	width: 100%;
+	font-size: 12pt;
 }
 
 #code-head {
@@ -133,6 +134,7 @@ a:hover {
 }
 
 #source-numbers {
+	padding-left: 10px;
 	margin-right: 20px;
 	text-align: right;
 }
@@ -147,7 +149,6 @@ a:hover {
 
 #right .stat {
 	color: #365ebf;
-	font-weight: bold;
 	font-size: 10pt;
 }
 
