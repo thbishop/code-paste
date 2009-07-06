@@ -30,7 +30,7 @@
 	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span><br/>
 	at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
 	<br/><br/>
-	<%= link_to 'edit', edit_paste_path(@paste) %><span class='spacer'>|</span><%= link_to 'raw', paste_path(@paste, :format => :txt) %>
+	<%= link_to 'raw', paste_path(@paste, :format => :txt) %><span class='spacer'>|</span><%= link_to 'edit', edit_paste_path(@paste) %>
 	<br/>	
 </div>
 <div style="clear: both"></div>
