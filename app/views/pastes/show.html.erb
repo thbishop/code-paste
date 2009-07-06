@@ -21,13 +21,13 @@
 	</div>
 </div>
 <div id="right">
-	Pasted<br/>
+	<span class="right-heading">Pasted</span><br/>
 	as<span class='stat'><%= " #{@paste.parser.display_name}"%></span><br/>
-	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span>at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
+	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span><br/>
+	at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
 	<br/><br/>
-	<%= link_to 'edit', edit_paste_path(@paste) %><span class='pipe_spacer'>|</span><%= link_to 'raw', paste_path(@paste, :format => :txt) %>
-	<br/>
-	
+	<%= link_to 'edit', edit_paste_path(@paste) %><span class='spacer'>|</span><%= link_to 'raw', paste_path(@paste, :format => :txt) %>
+	<br/>	
 </div>
 <div style="clear: both"></div>
 

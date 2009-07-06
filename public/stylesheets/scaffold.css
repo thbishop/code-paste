@@ -77,12 +77,12 @@ a:hover {
 #header {
 	background: #999999 none repeat scroll 0 0;
 	border-bottom: #d7d7d7 4px solid;
-	padding: 5px 20px 5px;
+	padding: 5px 5% 5px;
 }
 
 #header-nav {
 	margin: 0px auto;
-	padding: 8px 50px;
+	padding: 8px 0px;
 	
 }
 
@@ -110,13 +110,13 @@ a:hover {
 }
 
 #container {
-	width: 1300px;
+	width: 90%;
 	margin: 10px auto 0px auto;
 	padding-bottom: 30px;
 }
 
 #content {
-	 width: 1030px; float:left;
+	 width: 1000px; float: left;
 }
 
 #code {
@@ -143,19 +143,45 @@ a:hover {
 	color: #666666;
 	font-size: 8pt;
 	width: 230px;
-	float:left;
+	float: left;
 	padding: 10px 0px 0px 20px;
 }
 
 #right .stat {
 	color: #365ebf;
-	font-size: 10pt;
+	font-size: 12pt;
 }
 
 #right a {
+	font-size: 12pt;
+}
+
+.spacer {
+	margin: 0px 8px;
+}
+
+.right-heading {
 	font-size: 10pt;
 }
 
-.pipe_spacer {
-	margin: 0px 8px;
+#new-code-block {
+	background-color: #ffffff;
+	border: #d7d7d7 3px solid;
+	padding: 25px 20px;
+}
+
+.code-paste-text-area {
+	width: 100%;
+	border: #d7d7d7 1px solid;
+}
+
+.new_paste {
+	margin: 0;
+	padding: 0;
+}
+
+#new-paste-options {
+	padding-top: 10px;
+	float: right;
+	text-align: right;
 }

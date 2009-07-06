@@ -1,18 +1,25 @@
-<h1>New paste</h1>
-
-<% form_for(@paste) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :code %><br />
-    <%= f.text_area :code %>
-  </p>
-  <p>
-	<%= f.collection_select(:parser_id, Parser.all, :id, :display_name, { :include_blank => false }) %>
-  </p>
-  <p>
-    <%= f.submit 'Paste' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', pastes_path %>
+<div id="content">
+	<div id='code'>
+		<div id='new-code-block'>
+			<% form_for(@paste) do |f| %>
+				<%= f.error_messages %>
+					<div id="new-paste-box">
+						<%= f.text_area :code, :rows => 26, :cols => 60, :class => 'code-paste-text-area' %>
+					</div>
+					<div id="new-paste-options">
+						<%= f.collection_select(:parser_id, Parser.all, :id, :display_name, { :include_blank => false }) %>
+						<span class='spacer'></span>
+						<span class='spacer'></span>
+						<span class='spacer'></span>
+						<span class='spacer'></span>
+						<%= f.submit 'Paste' %>
+					</div>
+			<% end %>
+			<div style="clear: both"></div>
+		</div>
+	</div>
+</div>
+<div id="right">
+	<span class="right-heading">Just paste your code in the box and select the language</span><br/>
+</div>
+<div style="clear: both"></div>
