@@ -9,9 +9,7 @@
 					<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
 				</td>
 				<td>
-					<!-- <div id='source-code'> -->
-						<%= @paste.highlighted_code %>
-					<!-- </div> -->
+					<%= @paste.highlighted_code %>
 				</td>
 			</tr>
 		  </table>
@@ -28,7 +26,7 @@
 	<br/>
 	<span class="right-heading">Theme</span><br/>
 	<% s_options = '<option value="all_hallows_eve">All Hallows Eve</option><option value="blackboard">Blackboard</option><option value="cobalt">Cobalt</option><option value="eiffel">Eiffel</option><option value="mac_classic">Mac Classic</option><option value="twilight">Twilight</option>' %>
-	<%= select_tag('theme_select', s_options, :onchange => "set_theme(this.value);")%>
+	<%= select_tag('theme_select', s_options, :onchange => "set_theme(this.value);") %>
 	<br/>
 	<br/>
 	<%= link_to 'raw', paste_path(@paste, :format => :txt) %><span class='spacer'>|</span><%= link_to 'edit', edit_paste_path(@paste) %>
