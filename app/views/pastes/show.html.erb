@@ -8,16 +8,20 @@
 			</div>
 			<div style="clear: both;"></div>
 		</div>
-	  <table>
-		<tr>
-			<td>
-				<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
-			</td>
-			<td>
-				<%= @paste.highlighted_code %>
-			</td>
-		</tr>
-	  </table>
+		<div id='code-content'>
+		  <table>
+			<tr>
+				<td>
+					<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
+				</td>
+				<td>
+					<div id='source-code'>
+						<%= @paste.highlighted_code %>
+					</div>
+				</td>
+			</tr>
+		  </table>
+		</div>
 	</div>
 </div>
 <div id="right">

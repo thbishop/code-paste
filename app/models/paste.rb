@@ -22,11 +22,7 @@ class Paste < ActiveRecord::Base
     
     hcode = ""
     
-    doc.xpath('//pre').each do |root|
-      if root['class'] == 'twilight'
-        root['id'] = 'source-code'
-      end
-      
+    doc.xpath('//pre').each do |root|      
       root.children.each do |n|
         if n['class'] == 'line-numbers'
           n.unlink

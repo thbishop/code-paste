@@ -1,19 +1,34 @@
-<h1>Editing paste</h1>
-
-<% form_for(@paste) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :code %><br />
-    <%= f.text_area :code %>
-  </p>
-  <p>
-	<%= f.collection_select(:parser_id, Parser.all, :id, :display_name, { :include_blank => false }) %>
-  </p>
-  <p>
-    <%= f.submit 'Paste' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @paste %> |
-<%= link_to 'Back', pastes_path %>
+<div id="content">
+	<div id='code'>
+		<div id='new-code-block'>
+			<% form_for(@paste) do |f| %>
+				<%= f.error_messages %>
+					<div id="new-paste-box">
+						<%= f.text_area :code, :rows => 26, :cols => 60, :class => 'code-paste-text-area' %>
+					</div>
+					<div id="new-paste-options">
+						<%= f.collection_select(:parser_id, Parser.all, :id, :display_name, { :include_blank => false }) %>
+						<span class='spacer'></span>
+						<span class='spacer'></span>
+						<span class='spacer'></span>
+						<span class='spacer'></span>
+						<%= link_to 'Cancel', @paste%>
+						<span class='spacer'> or </span>
+						<%= f.submit 'Paste' %>
+					</div>
+			<% end %>
+			<div style="clear: both"></div>
+		</div>
+	</div>
+</div>
+<div id="right">
+	<span class="right-heading">Pasted</span><br/>
+	as<span class='stat'><%= " #{@paste.parser.display_name}"%></span><br/>
+	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span><br/>
+	at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
+	<br/>
+	<br/>
+	<br/>
+	<%= link_to 'raw', paste_path(@paste, :format => :txt) %><span class='spacer'>|</span><%= link_to 'delete', @paste, :confirm => 'Are you sure?', :method => :delete %>
+</div>
+<div style="clear: both"></div>

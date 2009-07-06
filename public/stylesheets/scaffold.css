@@ -133,6 +133,10 @@ a:hover {
 	width: 300px
 }
 
+#code-content {
+	 overflow: auto;
+}
+
 #source-numbers {
 	padding-left: 10px;
 	margin-right: 20px;
@@ -181,7 +185,15 @@ a:hover {
 }
 
 #new-paste-options {
+	color: #666666;
+	font-size: 8pt;
 	padding-top: 10px;
 	float: right;
 	text-align: right;
+}
+
+#new-paste-options a {
+	font-size: 10pt;
+	color: #999999;
+	background-color: inherit;
 }
