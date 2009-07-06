@@ -87,7 +87,7 @@ a:hover {
 }
 
 #header-nav a {
-	color: #d7d7d7;
+	color: #ffffff;
 	background-color: #999999;
 	text-decoration: none;
 	font-size: 12pt;
@@ -95,8 +95,8 @@ a:hover {
 }
 
 #header-nav a:hover {
+	color: #ffffff;
 	background-color: #999999;
-	color: #d7d7d7;
 	text-decoration: underline;
 	font-size: 12pt;
 	font-weight: bold;
