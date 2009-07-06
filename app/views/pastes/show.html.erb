@@ -1,12 +1,6 @@
 <div id="content">
 	<div id='code' class='twilight'>
 		<div id="code-head">
-			<div id="code-theme">
-				<span class="Comment">
-					THEME
-				</span>
-			</div>
-			<div style="clear: both;"></div>
 		</div>
 		<div id='code-content'>
 		  <table>
@@ -15,9 +9,9 @@
 					<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
 				</td>
 				<td>
-					<div id='source-code'>
+					<!-- <div id='source-code'> -->
 						<%= @paste.highlighted_code %>
-					</div>
+					<!-- </div> -->
 				</td>
 			</tr>
 		  </table>
@@ -29,7 +23,14 @@
 	as<span class='stat'><%= " #{@paste.parser.display_name}"%></span><br/>
 	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span><br/>
 	at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
-	<br/><br/>
+	<br/>
+	<br/>
+	<br/>
+	<span class="right-heading">Theme</span><br/>
+	<% s_options = '<option value="all_hallows_eve">All Hallows Eve</option><option value="blackboard">Blackboard</option><option value="cobalt">Cobalt</option><option value="eiffel">Eiffel</option><option value="mac_classic">Mac Classic</option><option value="twilight">Twilight</option>' %>
+	<%= select_tag('theme_select', s_options, :onchange => "set_theme(this.value);")%>
+	<br/>
+	<br/>
 	<%= link_to 'raw', paste_path(@paste, :format => :txt) %><span class='spacer'>|</span><%= link_to 'edit', edit_paste_path(@paste) %>
 	<br/>	
 </div>

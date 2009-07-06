@@ -128,11 +128,6 @@ a:hover {
 	padding: 5px 0px 0px 10px;
 }
 
-#code-theme {
-	float: right;
-	width: 300px
-}
-
 #code-content {
 	 overflow: auto;
 }

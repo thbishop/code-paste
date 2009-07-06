@@ -1,72 +1,76 @@
-pre.all_hallows_eve .ClassInheritance {
+.all_hallows_eve {
+   font-size: 11pt;
+}
+
+.all_hallows_eve .ClassInheritance {
    font-style: italic;
 }
-pre.all_hallows_eve .Constant {
+.all_hallows_eve .Constant {
    color: #3387CC;
 }
-pre.all_hallows_eve .TypeName {
+.all_hallows_eve .TypeName {
    text-decoration: underline;
 }
-pre.all_hallows_eve .TextBase {
+.all_hallows_eve .TextBase {
    background-color: #434242;
    color: #FFFFFF;
 }
-pre.all_hallows_eve {
+.all_hallows_eve {
    background-color: #000000;
    color: #FFFFFF;
 }
-pre.all_hallows_eve .StringEscapesExecuted {
+.all_hallows_eve .StringEscapesExecuted {
    color: #555555;
 }
-pre.all_hallows_eve .line-numbers {
+.all_hallows_eve .line-numbers {
    background-color: #73597E;
    color: #FFFFFF;
 }
-pre.all_hallows_eve .StringExecuted {
+.all_hallows_eve .StringExecuted {
    background-color: #CCCC33;
    color: #000000;
 }
-pre.all_hallows_eve .BlockComment {
+.all_hallows_eve .BlockComment {
    background-color: #9B9B9B;
    color: #FFFFFF;
 }
-pre.all_hallows_eve .TagName {
+.all_hallows_eve .TagName {
    text-decoration: underline;
 }
-pre.all_hallows_eve .PreProcessorLine {
+.all_hallows_eve .PreProcessorLine {
    color: #D0D0FF;
 }
-pre.all_hallows_eve .SupportFunction {
+.all_hallows_eve .SupportFunction {
    color: #C83730;
 }
-pre.all_hallows_eve .FunctionArgument {
+.all_hallows_eve .FunctionArgument {
    font-style: italic;
 }
-pre.all_hallows_eve .PreProcessorDirective {
+.all_hallows_eve .PreProcessorDirective {
 }
-pre.all_hallows_eve .StringEscapes {
+.all_hallows_eve .StringEscapes {
    color: #AAAAAA;
 }
-pre.all_hallows_eve .SourceBase {
+.all_hallows_eve .SourceBase {
    background-color: #000000;
    color: #FFFFFF;
 }
-pre.all_hallows_eve .TagAttribute {
+.all_hallows_eve .TagAttribute {
 }
-pre.all_hallows_eve .StringLiteral {
+.all_hallows_eve .StringLiteral {
    color: #CCCC33;
 }
-pre.all_hallows_eve .String {
+.all_hallows_eve .String {
    color: #66CC33;
 }
-pre.all_hallows_eve .Keyword {
+.all_hallows_eve .Keyword {
    color: #CC7833;
 }
-pre.all_hallows_eve .RegularExpression {
+.all_hallows_eve .RegularExssion {
    color: #CCCC33;
 }
-pre.all_hallows_eve .FunctionName {
+.all_hallows_eve .FunctionName {
 }
-pre.all_hallows_eve .Comment {
+.all_hallows_eve .Comment {
    color: #9933CC;
 }

@@ -1,88 +1,92 @@
-pre.blackboard .LatexSupport {
+.blackboard {
+   font-size: 11pt;
+}
+
+.blackboard .LatexSupport {
    color: #FBDE2D;
 }
-pre.blackboard .OcamlInfixOperator {
+.blackboard .OcamlInfixOperator {
    color: #8DA6CE;
 }
-pre.blackboard .MetaFunctionCallPy {
+.blackboard .MetaFunctionCallPy {
    color: #BECDE6;
 }
-pre.blackboard .Superclass {
+.blackboard .Superclass {
    color: #FF6400;
    font-style: italic;
 }
-pre.blackboard .Constant {
+.blackboard .Constant {
    color: #D8FA3C;
 }
-pre.blackboard {
+.blackboard {
    background-color: #0C1021;
    color: #F8F8F8;
 }
-pre.blackboard .OcamlFPConstant {
+.blackboard .OcamlFPConstant {
    text-decoration: underline;
 }
-pre.blackboard .OcamlFPInfixOperator {
+.blackboard .OcamlFPInfixOperator {
    text-decoration: underline;
 }
-pre.blackboard .Support {
+.blackboard .Support {
    color: #8DA6CE;
 }
-pre.blackboard .OcamlOperator {
+.blackboard .OcamlOperator {
    color: #F8F8F8;
 }
-pre.blackboard .Storage {
+.blackboard .Storage {
    color: #FBDE2D;
 }
-pre.blackboard .line-numbers {
+.blackboard .line-numbers {
    background-color: #253B76;
    color: #FFFFFF;
 }
-pre.blackboard .StringInterpolation {
+.blackboard .StringInterpolation {
    color: #FF6400;
 }
-pre.blackboard .InvalidIllegal {
+.blackboard .InvalidIllegal {
    background-color: #9D1E15;
    color: #F8F8F8;
 }
-pre.blackboard .PlistUnquotedString {
+.blackboard .PlistUnquotedString {
    color: #FFFFFF;
 }
-pre.blackboard .OcamlVariant {
+.blackboard .OcamlVariant {
    color: #D5E0F3;
 }
-pre.blackboard .MetaTag {
+.blackboard .MetaTag {
    color: #7F90AA;
 }
-pre.blackboard .LatexEnvironment {
+.blackboard .LatexEnvironment {
    background-color: #F7F7F8;
 }
-pre.blackboard .OcamlFPPrefixOperator {
+.blackboard .OcamlFPPrefixOperator {
    text-decoration: underline;
 }
-pre.blackboard .OcamlPrefixOperator {
+.blackboard .OcamlPrefixOperator {
    color: #8DA6CE;
 }
-pre.blackboard .EntityNameSection {
+.blackboard .EntityNameSection {
    color: #FFFFFF;
 }
-pre.blackboard .String {
+.blackboard .String {
    color: #61CE3C;
 }
-pre.blackboard .Keyword {
+.blackboard .Keyword {
    color: #FBDE2D;
 }
-pre.blackboard .LatexEnvironmentNested {
+.blackboard .LatexEnvironmentNested {
    background-color: #7691F3;
 }
-pre.blackboard .InvalidDeprecated {
+.blackboard .InvalidDecated {
    color: #AB2A1D;
    font-style: italic;
 }
-pre.blackboard .Variable {
+.blackboard .Variable {
 }
-pre.blackboard .Entity {
+.blackboard .Entity {
    color: #FF6400;
 }
-pre.blackboard .Comment {
+.blackboard .Comment {
    color: #AEAEAE;
 }
