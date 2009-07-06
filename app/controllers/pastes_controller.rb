@@ -44,13 +44,21 @@ class PastesController < ApplicationController
     @paste = Paste.new(params[:paste])
 
     respond_to do |format|
-      if @paste.save
-        flash[:notice] = 'Paste was successfully created.'
-        format.html { redirect_to(@paste) }
-        format.xml  { render :xml => @paste, :status => :created, :location => @paste }
+      if @paste.code.blank?
+        format.html { 
+          render :action => "new"
+        }
+        format.xml { 
+          render :xml => @paste.errors, :status => :unprocessable_entity 
+        }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @paste.errors, :status => :unprocessable_entity }
+        if @paste.save
+          format.html { redirect_to(@paste) }
+          format.xml  { render :xml => @paste, :status => :created, :location => @paste }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @paste.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
@@ -62,7 +70,6 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       if @paste.update_attributes(params[:paste])
-        flash[:notice] = 'Paste was successfully updated.'
         format.html { redirect_to(@paste) }
         format.xml  { head :ok }
       else
