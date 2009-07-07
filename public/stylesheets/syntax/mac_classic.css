@@ -3,7 +3,7 @@
 }
 
 .mac_classic .EmbeddedSource {
-   background-color: #0C0C0C;
+
 }
 .mac_classic .LibraryObject {
    font-weight: bold;
@@ -36,7 +36,7 @@
    color: #21439C;
 }
 .mac_classic .line-numbers {
-   background-color: #4D97FF;
+/*   background-color: #4D97FF;*/
    color: #000000;
 }
 .mac_classic .FunctionParameter {
@@ -66,7 +66,7 @@
    font-weight: bold;
 }
 .mac_classic .InvalidTrailingWhitespace {
-   background-color: #FFD0D0;
+/*   background-color: #FFD0D0;*/
 }
 .mac_classic .LibraryConstant {
    font-weight: bold;
@@ -76,7 +76,7 @@
    color: #68685B;
 }
 .mac_classic .EmbeddedEmbeddedSource {
-   background-color: #0E0E0E;
+/*   background-color: #0E0E0E;*/
 }
 .mac_classic .PreprocessorDirective {
    font-weight: bold;
@@ -124,4 +124,8 @@
 .mac_classic .Comment {
    color: #0066FF;
    font-style: italic;
+}
+
+.mac_classic .MetaTagInline, .MetaTagAll {
+	color: #0066FF;
 }

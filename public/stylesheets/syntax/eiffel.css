@@ -3,7 +3,7 @@
 }
 
 .eiffel .EmbeddedSource {
-   background-color: #6597F6;
+/*   background-color: #6597F6;*/
 }
 .eiffel .LibraryObject {
    font-weight: bold;
@@ -33,7 +33,7 @@
    color: #21439C;
 }
 .eiffel .line-numbers {
-   background-color: #C3DCFF;
+/*   background-color: #C3DCFF;*/
    color: #000000;
 }
 .eiffel .FunctionParameter {
@@ -67,7 +67,7 @@
    font-weight: bold;
 }
 .eiffel .InvalidTrailingWhitespace {
-   background-color: #FFD0D0;
+/*   background-color: #FFD0D0;*/
 }
 .eiffel .LibraryConstant {
    font-weight: bold;
@@ -88,7 +88,7 @@
    font-style: italic;
 }
 .eiffel .Invalid {
-   background-color: #990000;
+/*   background-color: #990000;*/
    color: #FFFFFF;
 }
 .eiffel .LibraryFunction {
@@ -122,4 +122,8 @@
 }
 .eiffel .Comment {
    color: #00B418;
+}
+
+.eiffel .MetaTagInline, .MetaTagAll {
+	color: #0066FF;
 }

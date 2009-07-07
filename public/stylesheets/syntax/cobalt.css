@@ -3,14 +3,14 @@
 }
 
 .cobalt .BlockQuote {
-   background-color: #004480;
+   /*background-color*/: #004480;
 }
 .cobalt .DiffInserted {
-   background-color: #154F00;
+   /*background-color*/: #154F00;
    color: #F8F8F8;
 }
 .cobalt .DiffHeader {
-   background-color: #000E1A;
+   /*background-color*/: #000E1A;
    color: #F8F8F8;
 }
 .cobalt .CssPropertyValue {
@@ -23,14 +23,14 @@
    color: #FF628C;
 }
 .cobalt .List {
-   background-color: #130D26;
+   /*background-color*/: #130D26;
 }
 .cobalt .DiffChanged {
-   background-color: #806F00;
+/*   background-color: #806F00;*/
    color: #F8F8F8;
 }
 .cobalt .EmbeddedSource {
-   background-color: #223545;
+/*   background-color: #223545;*/
    color: #FFFFFF;
 }
 .cobalt .Support {
@@ -40,7 +40,7 @@
    color: #E1EFFF;
 }
 .cobalt .RawMarkup {
-   background-color: #74B9D3;
+/*   background-color: #74B9D3;*/
 }
 .cobalt .CssConstructorArgument {
    color: #EB939A;
@@ -52,7 +52,7 @@
    color: #FFEE80;
 }
 .cobalt .line-numbers {
-   background-color: #B36539;
+/*   background-color: #B36539;*/
    color: #000000;
 }
 .cobalt .CssClass {
@@ -82,7 +82,7 @@
    font-style: italic;
 }
 .cobalt .DiffDeleted {
-   background-color: #4C0900;
+/*   background-color: #4C0900;*/
    color: #F8F8F8;
 }
 .cobalt .CCPreprocessorLine {
@@ -121,7 +121,7 @@
    color: #EDEF7D;
 }
 .cobalt .Invalid {
-   background-color: #800F00;
+/*   background-color: #800F00;*/
    color: #F8F8F8;
 }
 .cobalt .String {
@@ -132,7 +132,7 @@
 }
 .cobalt .HeadingMarkup {
    font-weight: bold;
-   background-color: #001221;
+/*   background-color: #001221;*/
    color: #C8E4FD;
 }
 .cobalt .CssPropertyName {

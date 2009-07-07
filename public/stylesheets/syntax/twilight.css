@@ -3,11 +3,11 @@
 }
 
 .twilight .DiffInserted {
-   background-color: #253B22;
+/*   background-color: #253B22;*/
    color: #F8F8F8;
 }
 .twilight .DiffHeader {
-   background-color: #0E2231;
+/*   background-color: #0E2231;*/
    color: #F8F8F8;
    font-style: italic;
 }
@@ -21,11 +21,11 @@
    color: #CF6A4C;
 }
 .twilight .DiffChanged {
-   background-color: #4A410D;
+/*   background-color: #4A410D;*/
    color: #F8F8F8;
 }
 .twilight .EmbeddedSource {
-   background-color: #A3A6AD;
+/*   background-color: #A3A6AD;*/
 }
 .twilight .Support {
    color: #9B859D;
@@ -40,7 +40,7 @@
    color: #F9EE98;
 }
 .twilight .line-numbers {
-   background-color: #DDF0FF;
+/*   background-color: #DDF0FF;*/
    color: #000000;
 }
 .twilight .CssClass {
@@ -65,7 +65,7 @@
    color: #CF6A4C;
 }
 .twilight .DiffDeleted {
-   background-color: #420E09;
+/*   background-color: #420E09;*/
    color: #F8F8F8;
 }
 .twilight .CCCPreprocessorLine {
@@ -75,10 +75,10 @@
    color: #CF7D34;
 }
 .twilight .EmbeddedSourceBright {
-   background-color: #9C9EA4;
+/*   background-color: #9C9EA4;*/
 }
 .twilight .InvalidIllegal {
-   background-color: #241A24;
+/*   background-color: #241A24;*/
    color: #F8F8F8;
 }
 .twilight .SupportFunction {
