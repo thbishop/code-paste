@@ -1,5 +1,6 @@
 .blackboard {
-   font-size: 11pt;
+   font-size: 10pt;
+   line-height: 1.2em;
 }
 
 .blackboard .LatexSupport {
@@ -119,5 +120,5 @@
 }
 
 .blackboard .MetaTagInline, .MetaTagAll {
-	color: #61CE3C;
+	color: #7F90AA;
 }

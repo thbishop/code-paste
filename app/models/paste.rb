@@ -40,7 +40,7 @@ class Paste < ActiveRecord::Base
   
   private
   def get_parsed_code
-    parsed_output = Uv.parse(self.code, 'xhtml', self.parser.name, true, 'twilight')
+    parsed_output = Uv.parse(self.code, 'xhtml', self.parser.name, true, 'blackboard')
     doc = Nokogiri::HTML(parsed_output)    
   end
   
