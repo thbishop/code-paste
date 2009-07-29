@@ -77,7 +77,13 @@ a:hover {
 #header {
 	background: #999999 none repeat scroll 0 0;
 	border-bottom: #d7d7d7 4px solid;
+	border-top: #d7d7d7 2px solid;
 	padding: 5px 5% 5px;
+	margin-top: 5px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 #header-nav {
@@ -106,6 +112,7 @@ a:hover {
 	width: 90%;
 	margin: 15px auto 0px auto;
 	padding-bottom: 30px;
+	padding-top: 55px;
 }
 
 #content {
