@@ -23,14 +23,9 @@ function set_parser(parser) {
 
 
 window.onload = function(e) {
-	/* set our default theme */
-	var tcookie = readCookie("theme");
-	var theme = tcookie ? tcookie : "twilight";
-	
-	if ($('theme_select')) {
-		$('theme_select').value=theme;
-		set_theme(theme);
-	}
+	/* set our theme */
+	var theme = "blackboard";
+	set_theme(theme);
 	
 	/* set our default parser */
 	var pcookie = readCookie('parser')

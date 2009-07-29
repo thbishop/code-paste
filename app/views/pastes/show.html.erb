@@ -1,12 +1,12 @@
 <div id="content">
-	<div id='code' class='twilight'>
+	<div id='code' >
 		<div id="code-head">
 		</div>
 		<div id='code-content'>
 		  <table>
 			<tr>
 				<td>
-					<pre id="source-numbers" class='twilight'><span class="Comment"><%= @paste.line_numbers %></span></pre>
+					<pre id="source-numbers"><span class="Comment"><%= @paste.line_numbers %></span></pre>
 				</td>
 				<td>
 					<%= @paste.highlighted_code %>
@@ -22,11 +22,6 @@
 	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span><br/>
 	at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
 	<br/>
-	<br/>
-	<br/>
-	<span class="right-heading">Theme</span><br/>
-	<% s_options = '<option value="blackboard">Blackboard</option>' %>
-	<%= select_tag('theme_select', s_options, :onchange => "set_theme(this.value);") %>
 	<br/>
 	<br/>
 	<div id="right-actions" style="height: 20px;">
