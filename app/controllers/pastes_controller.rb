@@ -2,7 +2,12 @@ class PastesController < ApplicationController
   # GET /pastes
   # GET /pastes.xml
   def index
-    @pastes = Paste.all
+    @pastes = Paste.paginate :page => params[:page] , :order => 'updated_at DESC', :per_page => 10
+    
+    logger.debug "found #{@pastes.length} pastes for the index"
+    
+    @all_pastes_count = Paste.all.length
+    @paste_counts = Parser.lang_counts
 
     respond_to do |format|
       format.html # index.html.erb

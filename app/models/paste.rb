@@ -2,6 +2,18 @@ class Paste < ActiveRecord::Base
   belongs_to :parser
   before_validation :calc_num_of_lines
   
+  def code_summary(lines_to_capture)
+    lines = self.code.split("\r\n")[0..lines_to_capture]
+    
+    if lines.size > 1
+      code_snip = lines.join("\r\n")
+    else
+      code_snip = lines.first
+    end
+    
+    return code_snip    
+  end
+  
   def line_numbers
     doc = get_parsed_code
     
