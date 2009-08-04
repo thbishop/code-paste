@@ -4,7 +4,7 @@
 		</tr>
 		<tr>
 			<td class="paste-info-key">as</td>
-			<td class="stat"><%= " #{@paste.parser.display_name}" %></td>
+			<td class="stat"><%= " #{@paste.parser.display_name}" if @paste.parser %></td>
 		</tr>
 		<tr>
 			<td class="paste-info-key">on</td>

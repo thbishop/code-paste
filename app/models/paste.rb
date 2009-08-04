@@ -1,10 +1,13 @@
 class Paste < ActiveRecord::Base
   belongs_to :parser
+  
   before_validation :calc_num_of_lines
   
   validates_presence_of :code
   validates_presence_of :number_of_lines
   validates_numericality_of :number_of_lines, :only_integer => true, :greater_than => 0
+  
+  validates_presence_of :parser
   
   def code_summary(lines_to_capture)
     lines = self.code.split("\r\n")[0..lines_to_capture]
@@ -61,7 +64,7 @@ class Paste < ActiveRecord::Base
   end
   
   def calc_num_of_lines
-    return if self.code.blank?
+    return if self.code.blank? || self.parser.blank?
     
     doc = get_parsed_code
     

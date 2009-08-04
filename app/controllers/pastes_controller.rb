@@ -16,19 +16,22 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @pastes }
     end
   end
 
   # GET /pastes/1
   # GET /pastes/1.xml
   def show
-    @paste = Paste.find(params[:id])
+    @paste = Paste.find_by_id(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @paste }
-      format.text { render :text => @paste.code }
+      if @paste
+        format.html # show.html.erb
+        format.text { render :text => @paste.code }
+      else
+        format.html { response_to_missing_id }
+        format.text { response_to_missing_id }
+      end
     end
   end
 
@@ -39,13 +42,20 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @paste }
     end
   end
 
   # GET /pastes/1/edit
   def edit
-    @paste = Paste.find(params[:id])
+    @paste = Paste.find_by_id(params[:id])
+    
+    respond_to do |format|
+      if @paste
+        format.html { render }
+      else
+        format.html { response_to_missing_id }
+      end
+    end
   end
 
   # POST /pastes
@@ -58,16 +68,11 @@ class PastesController < ApplicationController
         format.html { 
           render :action => "new"
         }
-        format.xml { 
-          render :xml => @paste.errors, :status => :unprocessable_entity 
-        }
       else
         if @paste.save
           format.html { redirect_to(@paste) }
-          format.xml  { render :xml => @paste, :status => :created, :location => @paste }
         else
           format.html { render :action => "new" }
-          format.xml  { render :xml => @paste.errors, :status => :unprocessable_entity }
         end
       end
     end
@@ -76,15 +81,23 @@ class PastesController < ApplicationController
   # PUT /pastes/1
   # PUT /pastes/1.xml
   def update
-    @paste = Paste.find(params[:id])
+    @paste = Paste.find_by_id(params[:id])
 
     respond_to do |format|
-      if @paste.update_attributes(params[:paste])
-        format.html { redirect_to(@paste) }
-        format.xml  { head :ok }
+      if @paste
+        if params[:paste].keys.include?('code') && params[:paste]['code'] == ''
+          format.html {
+            render :action => "edit"
+          }
+        else
+          if @paste.update_attributes(params[:paste])
+            format.html { redirect_to(@paste) }
+          else
+            format.html { render :action => "edit" }
+          end
+        end
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @paste.errors, :status => :unprocessable_entity }
+        format.html { response_to_missing_id }
       end
     end
   end
@@ -92,12 +105,23 @@ class PastesController < ApplicationController
   # DELETE /pastes/1
   # DELETE /pastes/1.xml
   def destroy
-    @paste = Paste.find(params[:id])
-    @paste.destroy
+    @paste = Paste.find_by_id(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to(pastes_url) }
-      format.xml  { head :ok }
+      if @paste
+        @paste.destroy
+        format.html { redirect_to root_path }
+      else
+        format.html {
+          response_to_missing_id
+        }
+      end
     end
+  end
+  
+  private
+  def response_to_missing_id
+    flash[:notice] = "Whoops, it doesn't look like that paste exits.  Perhaps you should just create a new one."
+    redirect_to root_path
   end
 end

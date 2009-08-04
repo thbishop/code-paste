@@ -15,13 +15,13 @@ class ParserTest < ActiveSupport::TestCase
   
   context "a new parser" do
     setup do
+      @parser_count = Parser.count
       Factory.create(:parser, :name => 'xml', :display_name => 'XML')
     end
-    
-    should_validate_uniqueness_of :name
-    should_validate_uniqueness_of :display_name
-    should_validate_presence_of :name
-    should_validate_presence_of :display_name
+
+    should "increase our parser count by 1" do
+      assert Parser.count == @parser_count + 1
+    end
   end
   
   context "three existing parsers, each with pastes" do

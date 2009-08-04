@@ -36,4 +36,18 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def self.tests_for_success_html_no_flash_with_app_layout_and_template(template)
+    should_respond_with :success
+    should_respond_with_content_type :html
+    should_not_set_the_flash
+    should_render_with_layout 'application'
+    should_render_template template
+  end
+  
+  def self.tests_for_missing_id_redirect_to_root_path
+    should_respond_with :redirect
+    should_redirect_to("root") { root_path }
+    should_set_the_flash_to "Whoops, it doesn't look like that paste exits.  Perhaps you should just create a new one."
+    should_not_assign_to :paste
+  end
 end
