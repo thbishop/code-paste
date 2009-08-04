@@ -1,7 +1,5 @@
 <div id="content">
 	<div id='code' >
-		<div id="code-head">
-		</div>
 		<div id='code-content'>
 		  <table>
 			<tr>
@@ -17,13 +15,7 @@
 	</div>
 </div>
 <div id="right">
-	<span class="right-heading">Pasted</span><br/>
-	as<span class='stat'><%= " #{@paste.parser.display_name}"%></span><br/>
-	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span><br/>
-	at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
-	<br/>
-	<br/>
-	<br/>
+	<%= render :partial => 'pasted_details' %>	<br/>
 	<div id="right-actions" style="height: 20px;">
 		<%= link_to 'raw', paste_path(@paste, :format => :txt) %><span class='spacer'>|</span><%= link_to 'edit', edit_paste_path(@paste) %>
 		<br/>
@@ -37,7 +29,7 @@
 <%= hidden_field(:paste, :code) %>
 
 <script language='javascript'>
-	ZeroClipboard.setMoviePath( 'http://localhost:3000/ZeroClipboard.swf' );
+	ZeroClipboard.setMoviePath( '/ZeroClipboard.swf' );
 
 	var clip = new ZeroClipboard.Client();
 	clip.setHandCursor( true );

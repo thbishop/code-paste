@@ -22,12 +22,7 @@
 	</div>
 </div>
 <div id="right">
-	<span class="right-heading">Pasted</span><br/>
-	as<span class='stat'><%= " #{@paste.parser.display_name}"%></span><br/>
-	on<span class='stat'><%= " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} " %></span><br/>
-	at<span class='stat'><%= " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}" %></span>
-	<br/>
-	<br/>
+	<%= render :partial => 'pasted_details' %>
 	<br/>
 	<%= link_to 'raw', paste_path(@paste, :format => :txt) %><span class='spacer'>|</span><%= link_to 'delete', @paste, :confirm => 'Are you sure?', :method => :delete %>
 </div>

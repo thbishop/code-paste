@@ -7,7 +7,12 @@ class PastesController < ApplicationController
     logger.debug "found #{@pastes.length} pastes for the index"
     
     @all_pastes_count = Paste.all.length
-    @paste_counts = Parser.lang_counts
+    @lang_counts = Parser.lang_counts
+    @day_count = Paste.count(:conditions => [ 'created_at >= ?', 1.days.ago ])
+    @week_count = Paste.count(:conditions => [ 'created_at >= ?', 7.days.ago ])
+    @this_month_count = Paste.count(:conditions => [ 'created_at >= ? and created_at <= ?', Time.now.beginning_of_month, Time.now.end_of_month ])
+    @last_month_count = Paste.count(:conditions => [ 'created_at >= ? and created_at <= ?', 1.months.ago.beginning_of_month, 1.months.ago.end_of_month ])
+    @this_year = Paste.count(:conditions => [ 'created_at >= ? and created_at <= ?', Time.now.beginning_of_year, Time.now.end_of_year ])
 
     respond_to do |format|
       format.html # index.html.erb

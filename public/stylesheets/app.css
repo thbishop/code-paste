@@ -115,7 +115,7 @@ a:hover {
 }
 
 #content {
-	 width: 1000px; float: left;
+	 width: 80%; float: left;
 }
 
 #code {
@@ -141,9 +141,9 @@ a:hover {
 #right {
 	color: #666666;
 	font-size: 8pt;
-	width: 230px;
+	width: 18%;
 	float: left;
-	padding: 10px 0px 0px 20px;
+	padding: 15px 0px 0px 20px;
 }
 
 #right .stat {
@@ -151,6 +151,13 @@ a:hover {
 	font-size: 12pt;
 }
 
+.paste-info-key {
+	color: #666666;
+	font-size: 8pt;
+	vertical-align: bottom;
+	padding: 0;
+	margin: 0;
+}
 #right a {
 	font-size: 12pt;
 }
@@ -268,10 +275,6 @@ a:hover {
 	color: #999999;
 }
 
-#all-right-stats {
-	margin-top: 5px;
-}
-
 .paste-summary a { 
 	color: #365ebf;
 	background-color: #eaf2f5;
@@ -312,50 +315,42 @@ a:hover {
 	text-decoration: none;
 }
 
-
 .paste-pagination {
 	background: #ffffff none repeat scroll 0 0;
 }
+
 .paste-pagination a, .paste-pagination span {
 	display: block;
 	float: left;
 	margin-right: 1px;
 	padding: 0.2em 0.5em;
 }
+
 .paste-pagination span.disabled {
 	border: 1px solid #DDDDDD;
 	color: #999999;
 }
+
 .paste-pagination span.current {
 	background: #365ebf none repeat scroll 0 0;
 	border: 1px solid #365ebf;
 	color: white;
 	font-weight: bold;
 }
+
 .paste-pagination a {
 	border: 1px solid #365ebf;
 	color: #365ebf;
 	background-color: #ffffff;
 	text-decoration: none;
 }
+
 .paste-pagination a:hover, .paste-pagination a:focus {
 	border-color: #365ebf;
 	background-color: #365ebf;
 	color: #ffffff;
 }
-/*.paste-pagination .page_info {
-	background:#2E6AB1 none repeat scroll 0 0;
-	color:white;
-	margin-bottom:0.3em;
-	padding:0.4em 0.6em;
-	text-align:center;
-	width:22em;
-}*/
-/*.paste-pagination .page_info b {
-	background: #6AA6ED none repeat scroll 0 0;
-	color: #000033;
-	padding: 0.1em 0.25em;
-}*/
+
 .paste-pagination:after {
 	clear: both;
 	content: ".";
@@ -363,9 +358,11 @@ a:hover {
 	height: 0;
 	visibility: hidden;
 }
+
 * html .paste-pagination {
 	height: 1%;
 }
+
 :first-child + html .paste-pagination {
 	overflow: hidden;
 }

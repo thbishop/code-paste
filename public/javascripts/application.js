@@ -62,3 +62,24 @@ function createCookie(name,value,days) {
 	
 	document.cookie = name+"="+value+expires+"; path=/";
 }
+
+function setupClipboard(elem_to_wire, text_elem, hover_elem) {
+	ZeroClipboard.setMoviePath( '/ZeroClipboard.swf' );
+	// ZeroClipboard.setMoviePath( 'http://localhost:3000/ZeroClipboard.swf' );
+
+	var clip = new ZeroClipboard.Client();
+	clip.setHandCursor( true );
+	clip.setCSSEffects( false );
+
+	clip.setText( document.getElementById(text_elem).value );
+
+	clip.addEventListener( 'mouseOver', function(client) {
+	                                $(hover_elem).show(); 
+	                        } );
+
+	clip.addEventListener( 'mouseOut', function(client) { 
+	                                $(hover_elem).hide(); 
+	                        } );
+
+	clip.glue(elem_to_wire);
+}

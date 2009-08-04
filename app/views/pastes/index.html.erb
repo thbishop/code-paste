@@ -4,7 +4,7 @@
 			<span class="all-pastes-header">All pastes</span>
 			<span class="all-pastes-header-sub"><%= "(#{@all_pastes_count} so far)" %></span>
 			<div id="pagination-container" class="paste-pagination">
-			  <%= will_paginate @pastes, :container => false, :previous_label => 'Previous', :next_label => 'Next' %>
+			  <%= will_paginate @pastes, :container => false, :previous_label => '<', :next_label => '>' %>
 			</div>
 		</div>
 		<% for paste in @pastes %>
@@ -27,22 +27,47 @@
 	</div>
 </div>
 <div id="right">
-	<div id="all-right-stats">
-		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td colspan="2" class="stat-heading">Paste History</td>
+			</tr>
+			<tr>
+				<td>Past 24 Hours</td>
+				<td class="lang-stat-count"><%= @day_count %></td>
+			</tr>
+			<tr>
+				<td>Past 7 Days</td>
+				<td class="lang-stat-count"><%= @week_count %></td>
+			</tr>
+			<tr>
+				<td>This Month</td>
+				<td class="lang-stat-count"><%= @this_month_count %></td>
+			</tr>
+			<tr>
+				<td>Last Month</td>
+				<td class="lang-stat-count"><%= @last_month_count %></td>
+			</tr>
+			<tr>
+				<td>This Year</td>
+				<td class="lang-stat-count"><%= @this_year %></td>
+			</tr>
+	</table>
+	<br/>
+	<br/>
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td colspan="2" class="stat-heading">By Language (all time)</td>
+			</tr>
+		
+			<% @lang_counts.sort_by{ |k,v| v}.reverse.each { |p_cnt| %>
 				<tr>
-					<td colspan="2" class="stat-heading">By Language</td>
+					<td><%= p_cnt[0] %></td>
+					<td class="lang-stat-count"><%= p_cnt[1] %></td>
 				</tr>
-			
-				<% @paste_counts.sort_by{ |k,v| v}.reverse.each { |p_cnt| %>
-					<tr>
-						<td><%= p_cnt[0] %></td>
-						<td class="lang-stat-count"><%= p_cnt[1] %></td>
-					</tr>
-				<% } %>
-		</table>
-		<br/>
-		<br/>
-		<br/>
-	</div>
+			<% } %>
+	</table>
+	<br/>
+	<br/>
+	<br/>
 </div>
 <div style="clear: both"></div>
