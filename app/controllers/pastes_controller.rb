@@ -121,7 +121,7 @@ class PastesController < ApplicationController
   
   private
   def response_to_missing_id
-    flash[:notice] = "Whoops, it doesn't look like that paste exits.  Perhaps you should just create a new one."
+    flash[:notice] = "Whoops, it looks like that paste doesn't exist.  Perhaps you should create a new one."
     redirect_to root_path
   end
 end

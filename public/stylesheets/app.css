@@ -374,3 +374,15 @@ a:hover {
 .link-spacer {
 	padding: 0px 4px;
 }
+
+.flash-notice {
+	margin: 0px;
+	text-align: left;
+	background-color: #eaf2f5;
+	border: 1px solid #bedce7;
+	padding: 8px;
+	color: #666666;
+	font-weight: bold;
+	display: inline;
+	
+}

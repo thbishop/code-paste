@@ -25,7 +25,11 @@
 		</div>
 	</div>		
 	<div id="container">
-			<%= yield %>
+		<% if flash[:notice] %>
+			<p class='flash-notice'><%= flash[:notice] %></p>
+		<% end %>
+		
+		<%= yield %>
 	</div>
 </body>
 </html>

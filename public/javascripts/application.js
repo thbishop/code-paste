@@ -62,7 +62,6 @@ function createCookie(name,value,days) {
 
 function setupClipboard(elem_to_wire, text_elem, hover_elem) {
 	ZeroClipboard.setMoviePath( '/ZeroClipboard.swf' );
-	// ZeroClipboard.setMoviePath( 'http://localhost:3000/ZeroClipboard.swf' );
 
 	var clip = new ZeroClipboard.Client();
 	clip.setHandCursor( true );
