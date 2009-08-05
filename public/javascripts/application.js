@@ -21,19 +21,16 @@ function set_parser(parser) {
 	createCookie("parser", parser, 365);
 }
 
-
-window.onload = function(e) {
-	/* set our theme */
-	var theme = "blackboard";
-	set_theme(theme);
-	
+function select_parser() {
 	/* set our default parser */
-	var pcookie = readCookie('parser')
-	var parser = pcookie ? pcookie : "16"
-
-	if ( $('paste_parser_id') && $('paste_code').empty()) {
-		$('paste_parser_id').value = parser
-		set_parser(parser);
+	var par_cookie = readCookie('parser');
+	
+	if ( par_cookie && $('paste_parser_id') && $('paste_code').empty() ) {
+		$('paste_parser_id').childElements().each( function(child) { 
+			if (child.value == par_cookie) {
+				child.writeAttribute('selected', 'selected');
+			}
+		})
 	}
 }
 

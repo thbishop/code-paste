@@ -8,11 +8,14 @@
   <%= javascript_include_tag 'prototype', 'ZeroClipboard', 'application'  %>
   <%= stylesheet_link_tag 'app' %>
   <%= stylesheet_link_tag 'syntax/blackboard.css' %>
+  <script type="text/javascript">
+    <%= @content_for_page_scripts %>
+  </script>
 </head>
 <body>
 	<div id="header">
 		<div id="header-nav">
-			<%= link_to 'New', new_paste_path %>
+			<%= link_to 'New', root_path %>
 			<span class='spacer'></span>
 			<span class='spacer'></span>
 			<span class='spacer'></span>

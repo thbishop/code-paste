@@ -1,3 +1,10 @@
+<% content_for("page_scripts") do %>
+    Event.observe(window, 'load',
+      function() { 
+	 	set_theme('blackboard');
+	  }
+    );
+<% end %>
 <div id="content">
 	<div id='code' >
 		<div id='code-content'>
