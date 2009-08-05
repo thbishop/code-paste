@@ -39,6 +39,7 @@ class PastesController < ApplicationController
   # GET /pastes/new.xml
   def new
     @paste = Paste.new
+    @parsers = Parser.all(:order => 'display_name')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,6 +49,7 @@ class PastesController < ApplicationController
   # GET /pastes/1/edit
   def edit
     @paste = Paste.find_by_id(params[:id])
+    @parsers = Parser.all(:order => 'display_name')
     
     respond_to do |format|
       if @paste
