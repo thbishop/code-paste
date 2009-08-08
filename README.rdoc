@@ -1,0 +1,64 @@
+== Code Paste
+
+This is yet another paste bin app written in rails that was heavily inspired by pastie.org.  Since that code isn't open source, this project was born.  It doesn't have as many features as the pastie.org app, but tries to follow the concepts of less features and keeping it simple.
+
+
+== Overview
+
+Out of the box, this app provides syntax highlighting for the following languages:
+* CSS
+* HTML
+* HTML (ERB/Rails)
+* Java
+* Javascript
+* JSON
+* Perl
+* Plain Text
+* Ruby
+* Ruby on Rails
+* XML
+* YAML
+
+And only one syntax highlighting theme (blackboard for you textmate users).
+
+
+== Setup
+
+The nice ultraviolet gem (http://ultraviolet.rubyforge.org/) is leveraged for syntax highlighting.  This gem depends on the textpow gem (http://textpow.rubyforge.org/), which depends on the Oniguruma library (http://www.geocities.jp/kosako3/oniguruma/) and related ruby bindings (http://rubyforge.org/projects/oniguruma).
+
+Depending on what platform you are on, you may need to download and compile the appropriate source.  On my mac, I was able to just use mac ports to install the Oniguruma library with
+	sudo port install oniguruma
+
+
+Next you need to build the native extensions for the rails app.  From the rails root dir that you downloaded, run
+	rake gems:build
+	
+
+You don't need to worry about installing any of the gems mentioned as they are frozen to the vendor directory using the gem dependencies feature of rails.
+
+	
+After populating your config/database.yml appropriately, run the migrations
+	rake db:migrate
+	
+And then populate the seed data
+	rake db:seed
+	
+Now just fire up the the app and give it a whirl.
+	
+
+== Customization
+
+Want more languages?  As long as it is a language that is already supported by ultraviolet, it's simple to add.  You just to create a new parser record for the desired language.  Set the name attribute to the name that ultraviolet uses and the display_name attribute to whatever you want it to show up as within the app.
+
+To get the list of languages supported by ultraviolet, you can run
+	uv -l syntax
+	
+Since there is no controller (or views) for the parser model, you can either add it to db/fixtures/parsers.rb to be added during the initial seed population or just add it through script/console.
+
+If I wanted to add support for PHP for example, I would do the following
+	script/console
+	Loading development environment (Rails 2.3.2)
+	>> p = Parser.create!(:name => 'php', :display_name => 'PHP')
+	=> #<Parser id: 13, display_name: "PHP", name: "php", created_at: "2009-08-08 05:19:56", updated_at: "2009-08-08 05:19:56">
+	
+That's it!
