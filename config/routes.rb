@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :pastes
   map.root :controller => 'pastes', :action => 'new'
+  
+  map.connect 'legal', :controller => 'static', :action => 'legal'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
