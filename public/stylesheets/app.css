@@ -396,6 +396,11 @@ a:hover {
 	padding: 25px 20px;
 }
 
+#legal h2 {
+	margin: 0;
+	color: #365EBF;
+}
+
 .legal-section-heading {
 	padding: 4px 10px;
 	color: #365ebf;
