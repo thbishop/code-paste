@@ -31,5 +31,16 @@
 		
 		<%= yield %>
 	</div>
+	<div style="clear: both"></div>
+	<div id="footer">
+		<div id="footer-links">
+			<div id="footer-link-legal">
+				<%= link_to 'Legal', :controller => 'static', :action => 'legal' %>
+			</div>
+			<div id="footer-link-source">
+				<%= link_to 'Want to run your own version of this?', "http://github.com/thbishop/code-paste/tree/master" %>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
