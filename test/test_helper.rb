@@ -47,7 +47,7 @@ class ActiveSupport::TestCase
   def self.tests_for_missing_id_redirect_to_root_path
     should_respond_with :redirect
     should_redirect_to("root") { root_path }
-    should_set_the_flash_to "Whoops, it doesn't look like that paste exits.  Perhaps you should just create a new one."
+    should_set_the_flash_to "Whoops, it looks like that paste doesn't exist.  Perhaps you should create a new one."
     should_not_assign_to :paste
   end
 end

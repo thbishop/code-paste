@@ -125,8 +125,6 @@ class PastesControllerTest < ActionController::TestCase
     
     context "which is successful" do
       setup do
-        # @rails_paste = Factory.build(:rails_snip)
-        
         post :create, :paste => { :code => @rails_paste.code, :parser_id => @rails_paste.parser_id }
       end
     

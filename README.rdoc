@@ -30,12 +30,9 @@ Depending on what platform you are on, you may need to download and compile the 
 	sudo port install oniguruma
 
 
-Next you need to build the native extensions for the rails app.  From the rails root dir that you downloaded, run
-	rake gems:build
+Once that's done, you'll need to make sure you have all of the necessary gems installed on your box.  From the root dire of the rails app, run (sudo may be required):
+	rake gems:install
 	
-
-You don't need to worry about installing any of the gems mentioned as they are frozen to the vendor directory using the gem dependencies feature of rails.
-
 	
 After populating your config/database.yml appropriately, run the migrations
 	rake db:migrate

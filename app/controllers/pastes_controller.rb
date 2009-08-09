@@ -64,6 +64,7 @@ class PastesController < ApplicationController
   # POST /pastes.xml
   def create
     @paste = Paste.new(params[:paste])
+    @parsers = Parser.all(:order => 'display_name')
 
     respond_to do |format|
       if @paste.code.blank?
@@ -84,7 +85,8 @@ class PastesController < ApplicationController
   # PUT /pastes/1.xml
   def update
     @paste = Paste.find_by_id(params[:id])
-
+    @parsers = Parser.all(:order => 'display_name')
+    
     respond_to do |format|
       if @paste
         if params[:paste].keys.include?('code') && params[:paste]['code'] == ''
