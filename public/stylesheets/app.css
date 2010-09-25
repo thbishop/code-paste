@@ -428,3 +428,7 @@ a:hover {
 	padding: 0px 25px;
 	float: right;
 }
+
+.clear {
+    clear: both;
+}
