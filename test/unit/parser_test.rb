@@ -1,16 +1,16 @@
 require 'test_helper'
 
 class ParserTest < ActiveSupport::TestCase
-  should_validate_presence_of :name
-  should_validate_presence_of :display_name
+  should validate_presence_of :name
+  should validate_presence_of :display_name
   
   context "with an existing parser" do
     setup do
       Factory.create(:parser, :name => 'xml', :display_name => 'XML')
     end
     
-    should_validate_uniqueness_of :name
-    should_validate_uniqueness_of :display_name
+    should validate_uniqueness_of :name
+    should validate_uniqueness_of :display_name
   end
   
   context "a new parser" do

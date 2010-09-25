@@ -8,8 +8,14 @@
 <div id="content">
 	<div id='code'>
 		<div id='new-code-block'>
-			<% form_for(@paste) do |f| %>
-				<%= f.error_messages %>
+			<%= form_for(@paste) do |f| %>
+				<% if @paste.errors.any? %>
+				  <ul>
+				    <% @paste.errors.full_messages.each do |msg| %>
+				      <li><%= msg %></li>
+				    <% end %>
+				  </ul>
+				<% end %>
 					<div id="new-paste-box">
 						<%= f.text_area :code, :rows => 26, :cols => 60, :class => 'code-paste-text-area' %>
 					</div>

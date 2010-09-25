@@ -1,10 +1,10 @@
 require 'test_helper'
 
 class PasteTest < ActiveSupport::TestCase
-  should_belong_to :parser  
-  should_validate_presence_of :code
-  should_validate_presence_of :number_of_lines
-  should_validate_numericality_of :number_of_lines
+  should belong_to :parser  
+  should validate_presence_of :code
+  should validate_presence_of :number_of_lines
+  should validate_numericality_of :number_of_lines
   
   context "a new paste" do
     setup do
