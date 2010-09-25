@@ -1,20 +1,13 @@
-<% content_for("page_scripts") do %>
-    Event.observe(window, 'load',
-      function() { 
-	 	set_theme('blackboard');
-	  }
-    );
-<% end %>
 <div id="content">
-	<div id='code' >
+	<div id='code' class='blackboard'>
 		<div id='code-content'>
 		  <table>
 			<tr>
 				<td>
-					<pre id="source-numbers"><span class="Comment"><%= @paste.line_numbers %></span></pre>
+					<pre id="source-numbers" class='blackboard'><span class="Comment"><%= @paste.line_numbers %></span></pre>
 				</td>
 				<td>
-					<%= @paste.highlighted_code %>
+					<%= raw @paste.highlighted_code %>
 				</td>
 			</tr>
 		  </table>

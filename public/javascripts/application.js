@@ -1,21 +1,3 @@
-/* themes */
-function set_theme(new_theme) {
-	createCookie("theme", new_theme, 365);
-	
-	var theme_divs = ['code', 'source-numbers', 'source-code'];
-	
-	for (tdiv in theme_divs) {
-		var classArray = $(theme_divs[tdiv]).classNames().toArray();
-		
-		for (var index = 0, len = classArray.size(); index < len; ++index) {
-	        	$(theme_divs[tdiv]).removeClassName(classArray[index]);
-		}
-		
-		Element.addClassName(theme_divs[tdiv], new_theme);
-	}
-}
-
-
 /* parsers */
 function set_parser(parser) {
 	createCookie("parser", parser, 365);
