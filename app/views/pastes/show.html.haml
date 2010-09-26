@@ -1,0 +1,45 @@
+#content
+  #code.blackboard
+    #code-content
+      %table
+        %tr
+          %td
+            %pre{:id => 'source-numbers', :class => 'blackboard'}  <span class="Comment">#{@paste.line_numbers}</span>
+          %td
+            = find_and_preserve(raw @paste.highlighted_code)
+#right
+  = render :partial => 'pasted_details'
+  %br
+  #right-actions
+    = link_to 'raw', paste_path(@paste, :format => :txt)
+    %span.spacer
+      |
+    = link_to 'edit', edit_paste_path(@paste)
+    %br
+    %br
+    %span#clip-copy
+      = image_tag('clip_22_22.png', { :alt => 'copy to clip board', :size => '22x22' } )
+    %span#clip-copy-text
+      copy code to clipboard
+.clear
+
+= hidden_field(:paste, :code)
+
+:javascript
+  ZeroClipboard.setMoviePath( '/ZeroClipboard.swf' );
+
+  var clip = new ZeroClipboard.Client();
+  clip.setHandCursor( true );
+  clip.setCSSEffects( false );
+
+  clip.setText( document.getElementById('paste_code').value );
+
+  clip.addEventListener( 'mouseOver', function(client) {
+    $('clip-copy-text').show();
+  } );
+
+  clip.addEventListener( 'mouseOut', function(client) {
+    $('clip-copy-text').hide();
+  } );
+
+  clip.glue('clip-copy');

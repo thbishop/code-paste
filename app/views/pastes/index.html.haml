@@ -1,0 +1,49 @@
+#content
+  #all-pastes
+    #all-pastes-count
+      %span.all-pastes-header All pastes
+      %span.all-pastes-header-sub (#{@all_pastes_count} so far)
+      #pagination-container.paste-pagination
+        = will_paginate @pastes, :container => false, :previous_label => '<', :next_label => '>'
+    - for paste in @pastes
+      .paste-summary
+        %p.paste-summary-header-action
+          = link_to 'view', paste_path(paste), { :class => 'link-spacer' }
+        %p.paste-summary-header-info
+          = paste.parser.display_name + " (" + paste.number_of_lines.to_s + " lines)"
+        .paste-summary-code
+          - paste.number_of_lines < 10 ? text_rows = paste.number_of_lines : text_rows = 10
+          = text_area_tag 'paste-code-summary', paste.code_summary(10), { :disabled => true, :rows => text_rows, :class => 'paste-code-summary-text-area' }
+    .clear
+#right
+  %table{:width => '100%', :cellspacing => '0', :cellpadding => '0', :border => '0'}
+    %tr
+      %td.stat-heading{:colspan => '2'} Paste History
+    %tr
+      %td Past 24 Hours
+      %td.lang-stat-count #{@day_count}
+    %tr
+      %td Past 7 Days
+      %td.lang-stat-count #{@day_count}
+    %tr
+      %td This Month
+      %td.lang-stat-count #{@this_month_count}
+    %tr
+      %td Last Month
+      %td.lang-stat-count #{@last_month_count}
+    %tr
+      %td This Year
+      %td.lang-stat-count #{@this_year}
+  %br
+  %br
+  %table{:width => '100%', :cellspacing => '0', :cellpadding => '0', :border => '0'}
+    %tr
+      %td.stat-heading{:colspan => '2'} By Language (all time)
+    - @lang_counts.sort_by{ |k,v| v}.reverse.each do |p_cnt|
+      %tr
+        %td #{p_cnt[0]}
+        %td.lang-stat-count #{p_cnt[1]}
+  %br
+  %br
+  %br
+.clear

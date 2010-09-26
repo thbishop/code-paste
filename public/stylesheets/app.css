@@ -146,11 +146,26 @@ a:hover {
 	padding: 15px 0px 0px 20px;
 }
 
+#right-actions {
+    height: 20px;
+}
+
 #right .stat {
 	color: #365ebf;
 	font-size: 12pt;
 }
 
+#clip-copy-text {
+    margin-left: 10px;
+    margin-bottom: 2px;
+    vertical-align: top;
+    display: none;
+}
+
+.paste-info {
+    width: 100%;
+    border: 0;
+}
 .paste-info-key {
 	color: #666666;
 	font-size: 8pt;
@@ -158,6 +173,7 @@ a:hover {
 	padding: 0;
 	margin: 0;
 }
+
 #right a {
 	font-size: 12pt;
 }

@@ -1,0 +1,15 @@
+%table.paste-info{:cellspacing => '0', :cellpadding => '0'}
+  %tr
+    %td.stat-heading{:colspan => 2} Pasted
+  %tr
+    %td.paste-info-key as
+    %td.stat 
+      = " #{@paste.parser.display_name}" if @paste.parser
+  %tr
+    %td.paste-info-key on
+    %td.stat 
+      = " #{@paste.updated_at.to_datetime.strftime("%-1m/%-1d/%y")} "
+  %tr
+    %td.paste-info-key at
+    %td.stat 
+      = " #{@paste.updated_at.localtime.strftime("%I:%M %p (%Z)")}"
