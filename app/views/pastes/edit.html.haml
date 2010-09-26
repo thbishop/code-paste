@@ -1,7 +1,7 @@
 #content
   #code
     #new-code-block
-      - form_for(@paste) do |f|
+      = form_for(@paste) do |f|
         = if @paste.errors.any?
           %ul
             - @paste.errors.full_messages.each do |msg|
