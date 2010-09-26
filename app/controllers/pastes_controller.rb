@@ -2,17 +2,15 @@ class PastesController < ApplicationController
   # GET /pastes
   # GET /pastes.xml
   def index
-    @pastes = Paste.paginate :page => params[:page] , :order => 'updated_at DESC', :per_page => 10
-    
-    logger.debug "found #{@pastes.length} pastes for the index"
+    @pastes = Paste.paginate :page => params[:page], :order => 'updated_at DESC', :per_page => 10
     
     @all_pastes_count = Paste.all.length
     @lang_counts = Parser.lang_counts
-    @day_count = Paste.count(:conditions => [ 'created_at >= ?', 1.days.ago ])
-    @week_count = Paste.count(:conditions => [ 'created_at >= ?', 7.days.ago ])
-    @this_month_count = Paste.count(:conditions => [ 'created_at >= ? and created_at <= ?', Time.now.beginning_of_month, Time.now.end_of_month ])
-    @last_month_count = Paste.count(:conditions => [ 'created_at >= ? and created_at <= ?', 1.months.ago.beginning_of_month, 1.months.ago.end_of_month ])
-    @this_year = Paste.count(:conditions => [ 'created_at >= ? and created_at <= ?', Time.now.beginning_of_year, Time.now.end_of_year ])
+    @day_count = Paste.within_last_day.count
+    @week_count = Paste.within_last_week.count
+    @this_month_count = Paste.this_month.count
+    @last_month_count = Paste.last_month.count
+    @this_year = Paste.this_year.count
 
     respond_to do |format|
       format.html # index.html.erb

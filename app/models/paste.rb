@@ -9,6 +9,12 @@ class Paste < ActiveRecord::Base
   
   validates_presence_of :parser
   
+  scope :within_last_day, where('created_at >= ?', 1.days.ago)
+  scope :within_last_week, where('created_at >= ?', 7.days.ago)
+  scope :this_month, where('created_at >= ? and created_at <= ?', Time.now.beginning_of_month, Time.now.end_of_month)
+  scope :last_month, where('created_at >= ? and created_at <= ?', 1.months.ago.beginning_of_month, 1.months.ago.end_of_month)
+  scope :this_year, where('created_at >= ? and created_at <= ?', Time.now.beginning_of_year, Time.now.end_of_year)
+  
   def code_summary(lines_to_capture)
     lines = self.code.split("\r\n")[0..lines_to_capture]
     
@@ -18,7 +24,7 @@ class Paste < ActiveRecord::Base
       code_snip = lines.first
     end
     
-    return code_snip    
+    return code_snip
   end
   
   def line_numbers
@@ -34,7 +40,7 @@ class Paste < ActiveRecord::Base
       end
     end
     
-    return lin_num    		  
+    return lin_num
   end
   
   def highlighted_code

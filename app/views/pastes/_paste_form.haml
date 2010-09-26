@@ -1,0 +1,18 @@
+#content
+  #code
+    #new-code-block
+      = form_for(@paste) do |f|
+        = if @paste.errors.any?
+          %ul
+            - @paste.errors.full_messages.each do |msg|
+              %li= msg
+        #new-paste-box
+          = f.text_area :code, :rows => 26, :cols => 60, :class => 'code-paste-text-area'
+        #new-paste-options
+          = f.collection_select(:parser_id, @parsers, :id, :display_name, { :include_blank => false } )
+          %span.spacer
+          %span.spacer
+          %span.spacer
+          %span.spacer
+          = f.submit 'Paste'
+      .clear
