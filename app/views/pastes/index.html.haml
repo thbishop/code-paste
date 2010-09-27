@@ -3,8 +3,8 @@
     #all-pastes-count
       %span.all-pastes-header All pastes
       %span.all-pastes-header-sub (#{@all_pastes_count} so far)
-      #pagination-container.paste-pagination
-        = will_paginate @pastes, :container => false, :previous_label => '<', :next_label => '>'
+      #pagination-container.paste-pagination-summary
+        = page_entries_info @pastes, :html => false
     - for paste in @pastes
       .paste-summary
         %p.paste-summary-header-action
@@ -14,6 +14,8 @@
         .paste-summary-code
           - paste.number_of_lines < 10 ? text_rows = paste.number_of_lines : text_rows = 10
           = text_area_tag 'paste-code-summary', paste.code_summary(10), { :disabled => true, :rows => text_rows, :class => 'paste-code-summary-text-area' }
+    #pagination-container.paste-pagination
+      = will_paginate @pastes, :container => false, :previous_label => '<', :next_label => '>'
     .clear
 #right
   %table{:width => '100%', :cellspacing => '0', :cellpadding => '0', :border => '0'}

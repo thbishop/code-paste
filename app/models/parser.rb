@@ -8,13 +8,9 @@ class Parser < ActiveRecord::Base
   
   def self.lang_counts
     lang_cnt = {}
-    parsers = Parser.all.map(&:display_name)
-    
-    parsers.sort.each { |parser|
-      @parser = Parser.find(:first, :conditions => ["display_name = ?", parser])
-      
-      lang_cnt[parser] = @parser.pastes.size
-    }
+    Parser.includes(:pastes).each do |parser|
+      lang_cnt[parser.display_name] = parser.pastes.size
+    end
     
     return lang_cnt
   end

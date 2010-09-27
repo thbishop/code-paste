@@ -340,6 +340,10 @@ width: 100%;
   background: #ffffff none repeat scroll 0 0;
 }
 
+.paste-pagination-summary {
+  color: #666666;
+}
+
 .paste-pagination a, .paste-pagination span {
   display: block;
   float: left;
@@ -352,10 +356,14 @@ width: 100%;
   color: #999999;
 }
 
-.paste-pagination span.current {
+.paste-pagination em {
+  display: block;
+  float: left;
+  margin-right: 1px;
+  padding: 0.2em 0.5em;
   background: #365ebf none repeat scroll 0 0;
   border: 1px solid #365ebf;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
 }
 
