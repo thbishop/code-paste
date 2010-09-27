@@ -156,11 +156,15 @@ a:hover {
   font-size: 12pt;
 }
 
+#clip-copy-container {
+  position: relative;
+  float: left;
+}
+
 #clip-copy-text {
   margin-left: 10px;
   margin-bottom: 2px;
   vertical-align: top;
-  display: none;
 }
 
 .paste-info {

@@ -17,9 +17,9 @@
     = link_to 'edit', edit_paste_path(@paste)
     %br
     %br
-    %span#clip-copy
-      = image_tag('clip_22_22.png', { :alt => 'copy to clip board', :size => '22x22' } )
-    %span#clip-copy-text
+    %div#clip-copy-container
+      = image_tag('clip_22_22.png', { :id => 'copy-img', :alt => 'copy to clip board', :size => '22x22' } )
+    %span#clip-copy-text{:style => 'display: none'}
       copy code to clipboard
 .clear
 
@@ -42,4 +42,4 @@
     $('clip-copy-text').hide();
   } );
 
-  clip.glue('clip-copy');
+  clip.glue('copy-img', 'clip-copy-container');
