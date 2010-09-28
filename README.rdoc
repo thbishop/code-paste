@@ -1,6 +1,6 @@
 == Code Paste
 
-This is yet another paste bin app written in rails that was heavily inspired by pastie.org.  Since that code isn't open source, this project was born.  It doesn't have as many features as the pastie.org app, but tries to follow the concepts of less features and keeping it simple.
+This is another paste bin app written in rails that was heavily inspired by pastie.org.  Since that code isn't open source, this project was born.  It doesn't have as many features as the pastie.org app, but just what was needed at the time.
 
 
 == Overview
@@ -24,33 +24,36 @@ And only one syntax highlighting theme (blackboard for you textmate users).
 
 == Setup
 
-The nice ultraviolet gem (http://ultraviolet.rubyforge.org/) is leveraged for syntax highlighting.  This gem depends on the textpow gem (http://textpow.rubyforge.org/), which depends on the Oniguruma library (http://www.geocities.jp/kosako3/oniguruma/) and related ruby bindings (http://rubyforge.org/projects/oniguruma).
+This app uses the ultraviolet gem (http://ultraviolet.rubyforge.org/) for syntax highlighting.  This gem depends on the textpow gem (http://textpow.rubyforge.org/), which depends on the Oniguruma library (http://www.geocities.jp/kosako3/oniguruma/) and related ruby bindings (http://rubyforge.org/projects/oniguruma).
 
-Depending on what platform you are on, you may need to download and compile the appropriate source.  On my mac, I was able to just use mac ports to install the Oniguruma library with
-	sudo port install oniguruma
+Depending on what platform you are on, you may need to download and compile the source for Oniguruma.  I had to do so on my mac (couldn't get the mac port to work correctly).
 
 
 Once that's done, you'll need to make sure you have all of the necessary gems installed on your box.  From the root dire of the rails app, run (sudo may be required):
-	rake gems:install
-	
-	
+	bundle install
+
+
 After populating your config/database.yml appropriately, run the migrations
 	rake db:migrate
-	
+
+
 And then populate the seed data
 	rake db:seed
-	
+
+
 Now just fire up the the app and give it a whirl.
-	
+
 
 == Customization
 
-Want more languages?  As long as it is a language that is already supported by ultraviolet, it's simple to add.  You just to create a new parser record for the desired language.  Set the name attribute to the name that ultraviolet uses and the display_name attribute to whatever you want it to show up as within the app.
+Want more languages?  As long as its a language that's already supported by ultraviolet, it's simple to add.  You just to create a new parser record for the desired language.  Set the name attribute to the name that ultraviolet uses and the display_name attribute to whatever you want it to show up as within the app.
 
-To get the list of languages supported by ultraviolet, you can run
+To get the list of languages supported by ultraviolet, you can run this from the command line
 	uv -l syntax
-	
-Since there is no controller (or views) for the parser model, you can either add it to db/fixtures/parsers.rb to be added during the initial seed population or just add it through script/console.
+
+
+Since there is no controller (or views) for the parser model, you can either add it to db/seeds.rb to be added during the initial seed population or just add it through script/console.
+
 
 If I wanted to add support for PHP for example, I would do the following
 	script/console
