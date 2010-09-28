@@ -23,7 +23,8 @@
       copy code to clipboard
 .clear
 
-= hidden_field(:paste, :code)
+:preserve
+  #{hidden_field(:paste, :code)}
 
 :javascript
   ZeroClipboard.setMoviePath( '/ZeroClipboard.swf' );
