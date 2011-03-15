@@ -1,5 +1,3 @@
 class StaticController < ApplicationController
-  def legal
-    
-  end
+  def legal; end
 end

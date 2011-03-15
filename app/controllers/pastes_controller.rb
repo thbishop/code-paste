@@ -3,7 +3,7 @@ class PastesController < ApplicationController
   # GET /pastes.xml
   def index
     @pastes = Paste.paginate :page => params[:page], :order => 'updated_at DESC', :per_page => 10
-    
+
     @all_pastes_count = Paste.all.length
     @lang_counts = Parser.lang_counts
     @day_count = Paste.within_last_day.count
@@ -48,7 +48,7 @@ class PastesController < ApplicationController
   def edit
     @paste = Paste.find_by_id(params[:id])
     @parsers = Parser.all(:order => 'display_name')
-    
+
     respond_to do |format|
       if @paste
         format.html { render }
@@ -66,7 +66,7 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       if @paste.code.blank?
-        format.html { 
+        format.html {
           render :action => "new"
         }
       else
@@ -84,7 +84,7 @@ class PastesController < ApplicationController
   def update
     @paste = Paste.find_by_id(params[:id])
     @parsers = Parser.all(:order => 'display_name')
-    
+
     respond_to do |format|
       if @paste
         if params[:paste].keys.include?('code') && params[:paste]['code'] == ''
@@ -120,7 +120,7 @@ class PastesController < ApplicationController
       end
     end
   end
-  
+
   private
   def response_to_missing_id
     flash[:notice] = "Whoops, it looks like that paste doesn't exist.  Perhaps you should create a new one."
