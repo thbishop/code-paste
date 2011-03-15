@@ -110,7 +110,7 @@ class PastesControllerTest < ActionController::TestCase
       end
       
       tests_for_missing_id_redirect_to_root_path
-      should render_with_layout 'application'
+      should_not render_with_layout
     end
   end
 
