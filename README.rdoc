@@ -30,15 +30,15 @@ Depending on what platform you are on, you may need to download and compile the 
 
 
 Once that's done, you'll need to make sure you have all of the necessary gems installed on your box.  From the root dire of the rails app, run (sudo may be required):
-	bundle install
+  bundle install
 
 
 After populating your config/database.yml appropriately, run the migrations
-	rake db:migrate
+  rake db:migrate
 
 
 And then populate the seed data
-	rake db:seed
+  rake db:seed
 
 
 Now just fire up the the app and give it a whirl.
@@ -49,16 +49,28 @@ Now just fire up the the app and give it a whirl.
 Want more languages?  As long as its a language that's already supported by ultraviolet, it's simple to add.  You just to create a new parser record for the desired language.  Set the name attribute to the name that ultraviolet uses and the display_name attribute to whatever you want it to show up as within the app.
 
 To get the list of languages supported by ultraviolet, you can run this from the command line
-	uv -l syntax
+  uv -l syntax
 
 
 Since there is no controller (or views) for the parser model, you can either add it to db/seeds.rb to be added during the initial seed population or just add it through script/console.
 
 
 If I wanted to add support for PHP for example, I would do the following
-	script/console
-	Loading development environment (Rails 2.3.2)
-	>> p = Parser.create!(:name => 'php', :display_name => 'PHP')
-	=> #<Parser id: 13, display_name: "PHP", name: "php", created_at: "2009-08-08 05:19:56", updated_at: "2009-08-08 05:19:56">
-	
+  rails console
+  Loading development environment (Rails 2.3.2)
+  >> p = Parser.create!(:name => 'php', :display_name => 'PHP')
+  => #<Parser id: 13, display_name: "PHP", name: "php", created_at: "2009-08-08 05:19:56", updated_at: "2009-08-08 05:19:56">
+
+
 That's it!
+
+
+== Contributing
+
+* Fork the project.
+* Make your feature addition or bug fix (with tests) in a topic branch.
+* Send a pull request and I'll get it integrated.
+
+
+== Copyright/License
+Copyright (c) 2010 - 2011 Thomas Bishop. See LICENSE (MIT) for details.

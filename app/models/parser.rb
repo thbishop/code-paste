@@ -12,6 +12,6 @@ class Parser < ActiveRecord::Base
       lang_cnt[parser.display_name] = parser.pastes.size
     end
 
-    return lang_cnt
+    lang_cnt
   end
 end

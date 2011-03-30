@@ -18,13 +18,7 @@ class Paste < ActiveRecord::Base
   def code_summary(lines_to_capture)
     lines = self.code.split("\r\n")[0..lines_to_capture]
 
-    if lines.size > 1
-      code_snip = lines.join("\r\n")
-    else
-      code_snip = lines.first
-    end
-
-    return code_snip
+    lines.size > 1 ? code_snip = lines.join("\r\n") : code_snip = lines.first
   end
 
   def line_numbers
@@ -35,12 +29,12 @@ class Paste < ActiveRecord::Base
     doc.xpath('//pre').each do |root|
       root.children.each do |n|
         if n['class'] == 'line-numbers'
-          lin_num += n.content.strip + "\n"
+          lin_num << n.content.strip + "\n"
         end
       end
     end
 
-    return lin_num
+    lin_num
   end
 
   def highlighted_code
@@ -60,7 +54,7 @@ class Paste < ActiveRecord::Base
       end
     end
 
-    return doc
+    doc
   end
 
   private
@@ -80,7 +74,7 @@ class Paste < ActiveRecord::Base
       root.children.each do |n|
         if n['class'] == 'line-numbers'
           lin_num = ''
-          lin_num += n.content.strip
+          lin_num << n.content.strip
         end
       end
     end
