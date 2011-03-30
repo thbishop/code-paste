@@ -17,7 +17,7 @@ class ActiveSupport::TestCase
     should render_with_layout 'application'
     should render_template template
   end
-  
+
   def self.tests_for_missing_id_redirect_to_root_path
     should respond_with :redirect
     should redirect_to("root") { root_path }
